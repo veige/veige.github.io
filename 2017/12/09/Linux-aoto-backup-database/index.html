@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="I Think Therefore I Am">
-<meta property="og:type" content="website">
-<meta property="og:title" content="veige的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="mysql数据库的备份有很多种，本文主要介绍系统级别的数据库备份，实现每天凌晨3:00保存一份数据库文件，自动删除30天以前的数据库备份文件  具体流程1、创建当前备份文件夹（存储当天的备份文件）# cd /home # mkdir backup 2、创建累积备份文件夹（存取一个月内的所有备份文件）# mkdir oldback 3、创建脚本文件# touch backup.sh 4、编辑bac">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux服务器自动备份mysql数据库">
+<meta property="og:url" content="http://yoursite.com/2017/12/09/Linux-aoto-backup-database/index.html">
 <meta property="og:site_name" content="veige的博客">
-<meta property="og:description" content="I Think Therefore I Am">
+<meta property="og:description" content="mysql数据库的备份有很多种，本文主要介绍系统级别的数据库备份，实现每天凌晨3:00保存一份数据库文件，自动删除30天以前的数据库备份文件  具体流程1、创建当前备份文件夹（存储当天的备份文件）# cd /home # mkdir backup 2、创建累积备份文件夹（存取一个月内的所有备份文件）# mkdir oldback 3、创建脚本文件# touch backup.sh 4、编辑bac">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/veige/image/blob/master/20171206/database.jpg?raw=true">
+<meta property="og:updated_time" content="2017-12-09T01:57:29.889Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="veige的博客">
-<meta name="twitter:description" content="I Think Therefore I Am">
+<meta name="twitter:title" content="linux服务器自动备份mysql数据库">
+<meta name="twitter:description" content="mysql数据库的备份有很多种，本文主要介绍系统级别的数据库备份，实现每天凌晨3:00保存一份数据库文件，自动删除30天以前的数据库备份文件  具体流程1、创建当前备份文件夹（存储当天的备份文件）# cd /home # mkdir backup 2、创建累积备份文件夹（存取一个月内的所有备份文件）# mkdir oldback 3、创建脚本文件# touch backup.sh 4、编辑bac">
+<meta name="twitter:image" content="https://github.com/veige/image/blob/master/20171206/database.jpg?raw=true">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/09/Linux-aoto-backup-database/"/>
 
 
 
 
 
-  <title>归档 | veige的博客</title>
+  <title>linux服务器自动备份mysql数据库 | veige的博客</title>
   
 
 
@@ -143,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,185 +285,208 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/09/Linux-aoto-backup-database/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="veige">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/run.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="veige的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">linux服务器自动备份mysql数据库</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-09T10:07:28+08:00">
+                2017-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 4 篇日志。 继续努力。
-      </span>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://github.com/veige/image/blob/master/20171206/database.jpg?raw=true" rel="gallery_cjayoxk6b000224x8tffue89u"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://github.com/veige/image/blob/master/20171206/database.jpg?raw=true" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
           </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/09/Linux-aoto-backup-database/" itemprop="url">
-              
-                <span itemprop="name">linux服务器自动备份mysql数据库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-09T10:07:28+08:00"
-              content="2017-12-09" >
-          12-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/09/GitHub-build-personal-page/" itemprop="url">
-              
-                <span itemprop="name">github上搭建自己的个人主页</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-09T09:56:44+08:00"
-              content="2017-12-09" >
-          12-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <ul>
+<li>mysql数据库的备份有很多种，本文主要介绍系统级别的数据库备份，实现每天凌晨3:00保存一份数据库文件，自动删除30天以前的数据库备份文件</li>
+</ul>
+<h3 id="具体流程"><a href="#具体流程" class="headerlink" title="具体流程"></a>具体流程</h3><h4 id="1、创建当前备份文件夹（存储当天的备份文件）"><a href="#1、创建当前备份文件夹（存储当天的备份文件）" class="headerlink" title="1、创建当前备份文件夹（存储当天的备份文件）"></a>1、创建当前备份文件夹（存储当天的备份文件）</h4><pre><code># cd /home
+# mkdir backup
+</code></pre><h4 id="2、创建累积备份文件夹（存取一个月内的所有备份文件）"><a href="#2、创建累积备份文件夹（存取一个月内的所有备份文件）" class="headerlink" title="2、创建累积备份文件夹（存取一个月内的所有备份文件）"></a>2、创建累积备份文件夹（存取一个月内的所有备份文件）</h4><pre><code># mkdir oldback
+</code></pre><h4 id="3、创建脚本文件"><a href="#3、创建脚本文件" class="headerlink" title="3、创建脚本文件"></a>3、创建脚本文件</h4><pre><code># touch backup.sh
+</code></pre><h4 id="4、编辑back-sh文件"><a href="#4、编辑back-sh文件" class="headerlink" title="4、编辑back.sh文件"></a>4、编辑back.sh文件</h4><pre><code># vi backup.sh
+</code></pre><p>backup.sh文件内容 保存并退出</p>
+<pre><code>#!bin/bash
+cd /home/backup
+echo &quot;You are In Backup Directory&quot;
+mv backup* /home/oldbackup
+echo &quot;Old Databases are Moved to oldbackup folder&quot;
+Now=$(date +&quot;%d-%m-%Y--%H:%M:%S&quot;)
+File=backup-$Now.sql
+mysqldump -u用户名 -p密码 -x 你的数据库名 &gt; $File
+echo &quot;Your Database Backup Successfully Completed&quot;
+find /home/oldbackup/ -mtime +30 -name &quot;*.sql&quot; -exec rm -rf {} \;
+echo &quot;Clear Successfully &quot;
+cd /
+</code></pre><h4 id="5、修改backup-sh的权限"><a href="#5、修改backup-sh的权限" class="headerlink" title="5、修改backup.sh的权限"></a>5、修改backup.sh的权限</h4><pre><code># chmod +x /backup.sh 
+</code></pre><h4 id="6、设置linux定时任务"><a href="#6、设置linux定时任务" class="headerlink" title="6、设置linux定时任务"></a>6、设置linux定时任务</h4><pre><code># crontab -e
+0 3 * * * root . /home/backup.sh
+</code></pre><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>（系统级的）做系统级配置我们会直接配置 /etc/crontab</p>
+<p>（用户级的）一般还是建议大家使用 crontab -e ，这样系统也会帮着检查我们配置的脚本语法。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/09/PHP-weixin-download-app/" itemprop="url">
-              
-                <span itemprop="name">php实现微信扫码下载apk</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-09T09:56:44+08:00"
-              content="2017-12-09" >
-          12-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/09/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-09T09:23:00+08:00"
-              content="2017-12-09" >
-          12-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+	
+	<div>
+		
+			
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 ------</div>
+<br/>
+<div style="border: 1px solid black">
+<div style="margin-left:10px">
+<span style="font-weight:blod">版权声明</span>
+<img src="http://7xqmjb.com1.z0.glb.clouddn.com/2017020242973cc.png" >
+<br/>
+<p style="font-size: 10px;line-height: 30px"><a href="http://itxuwei.com" style="color:#258FC6">veige's Blog</a> by <a href="www.itxuwei.com" style="color:#258FC6">Wei xu</a> is licensed under a <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#258FC6">Creative Commons BY-NC-ND 4.0 International License</a>.<br/>
+由<a href="www.itxuwei.com" style="color:#258FC6">veige</a>创作并维护的<a href="www.itxuwei.com" style="color:#258FC6">veige's Blog</a>博客采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:#258FC6">创作共用保留署名-非商业-禁止演绎4.0国际许可证</a>。<br/>
+本文首发于<a href="www.itxuwei.com" style="color:#258FC6">veige's Blog</a> 博客（ <a href="www.itxuwei.com" style="color:#258FC6">www.itxuwei.com</a> ），版权所有，侵权必究。</p>
+</div>
+</div>
+
+		
+	</div>
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/09/GitHub-build-personal-page/" rel="next" title="github上搭建自己的个人主页">
+                <i class="fa fa-chevron-left"></i> github上搭建自己的个人主页
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -467,6 +494,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -487,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -571,6 +611,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#具体流程"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5177;&#x4F53;&#x6D41;&#x7A0B;" class="headerlink" title="&#x5177;&#x4F53;&#x6D41;&#x7A0B;"></a>&#x5177;&#x4F53;&#x6D41;&#x7A0B;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、创建当前备份文件夹（存储当天的备份文件）"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#1&#x3001;&#x521B;&#x5EFA;&#x5F53;&#x524D;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x5939;&#xFF08;&#x5B58;&#x50A8;&#x5F53;&#x5929;&#x7684;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF09;" class="headerlink" title="1&#x3001;&#x521B;&#x5EFA;&#x5F53;&#x524D;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x5939;&#xFF08;&#x5B58;&#x50A8;&#x5F53;&#x5929;&#x7684;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF09;"></a>1&#x3001;&#x521B;&#x5EFA;&#x5F53;&#x524D;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x5939;&#xFF08;&#x5B58;&#x50A8;&#x5F53;&#x5929;&#x7684;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF09;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、创建累积备份文件夹（存取一个月内的所有备份文件）"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#2&#x3001;&#x521B;&#x5EFA;&#x7D2F;&#x79EF;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x5939;&#xFF08;&#x5B58;&#x53D6;&#x4E00;&#x4E2A;&#x6708;&#x5185;&#x7684;&#x6240;&#x6709;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF09;" class="headerlink" title="2&#x3001;&#x521B;&#x5EFA;&#x7D2F;&#x79EF;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x5939;&#xFF08;&#x5B58;&#x53D6;&#x4E00;&#x4E2A;&#x6708;&#x5185;&#x7684;&#x6240;&#x6709;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF09;"></a>2&#x3001;&#x521B;&#x5EFA;&#x7D2F;&#x79EF;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x5939;&#xFF08;&#x5B58;&#x53D6;&#x4E00;&#x4E2A;&#x6708;&#x5185;&#x7684;&#x6240;&#x6709;&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#xFF09;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、创建脚本文件"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#3&#x3001;&#x521B;&#x5EFA;&#x811A;&#x672C;&#x6587;&#x4EF6;" class="headerlink" title="3&#x3001;&#x521B;&#x5EFA;&#x811A;&#x672C;&#x6587;&#x4EF6;"></a>3&#x3001;&#x521B;&#x5EFA;&#x811A;&#x672C;&#x6587;&#x4EF6;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、编辑back-sh文件"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#4&#x3001;&#x7F16;&#x8F91;back-sh&#x6587;&#x4EF6;" class="headerlink" title="4&#x3001;&#x7F16;&#x8F91;back.sh&#x6587;&#x4EF6;"></a>4&#x3001;&#x7F16;&#x8F91;back.sh&#x6587;&#x4EF6;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、修改backup-sh的权限"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#5&#x3001;&#x4FEE;&#x6539;backup-sh&#x7684;&#x6743;&#x9650;" class="headerlink" title="5&#x3001;&#x4FEE;&#x6539;backup.sh&#x7684;&#x6743;&#x9650;"></a>5&#x3001;&#x4FEE;&#x6539;backup.sh&#x7684;&#x6743;&#x9650;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、设置linux定时任务"><span class="nav-number">1.6.</span> <span class="nav-text"><a href="#6&#x3001;&#x8BBE;&#x7F6E;linux&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;" class="headerlink" title="6&#x3001;&#x8BBE;&#x7F6E;linux&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;"></a>6&#x3001;&#x8BBE;&#x7F6E;linux&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x6CE8;&#x610F;" class="headerlink" title="&#x6CE8;&#x610F;"></a>&#x6CE8;&#x610F;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -711,6 +767,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
