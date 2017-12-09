@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker setting]]></title>
+    <url>%2F2017%2F12%2F09%2FDocker-setting%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux服务器自动备份mysql数据库]]></title>
     <url>%2F2017%2F12%2F09%2FLinux-aoto-backup-database%2F</url>
     <content type="text"><![CDATA[mysql数据库的备份有很多种，本文主要介绍系统级别的数据库备份，实现每天凌晨3:00保存一份数据库文件，自动删除30天以前的数据库备份文件 具体流程1、创建当前备份文件夹（存储当天的备份文件）# cd /home # mkdir backup 2、创建累积备份文件夹（存取一个月内的所有备份文件）# mkdir oldback 3、创建脚本文件# touch backup.sh 4、编辑back.sh文件# vi backup.sh backup.sh文件内容 保存并退出 #!bin/bash cd /home/backup echo &quot;You are In Backup Directory&quot; mv backup* /home/oldbackup echo &quot;Old Databases are Moved to oldbackup folder&quot; Now=$(date +&quot;%d-%m-%Y--%H:%M:%S&quot;) File=backup-$Now.sql mysqldump -u用户名 -p密码 -x 你的数据库名 &gt; $File echo &quot;Your Database Backup Successfully Completed&quot; find /home/oldbackup/ -mtime +30 -name &quot;*.sql&quot; -exec rm -rf {} \; echo &quot;Clear Successfully &quot; cd / 5、修改backup.sh的权限# chmod +x /backup.sh 6、设置linux定时任务# crontab -e 0 3 * * * root . /home/backup.sh 注意（系统级的）做系统级配置我们会直接配置 /etc/crontab （用户级的）一般还是建议大家使用 crontab -e ，这样系统也会帮着检查我们配置的脚本语法。]]></content>
