@@ -4,6 +4,9 @@
     <title><![CDATA[linux服务器自动备份mysql数据库]]></title>
     <url>%2F2017%2F12%2F09%2FLinux-aoto-backup-database%2F</url>
     <content type="text"><![CDATA[mysql数据库的备份有很多种，本文主要介绍系统级别的数据库备份，实现每天凌晨3:00保存一份数据库文件，自动删除30天以前的数据库备份文件 具体流程1、创建当前备份文件夹（存储当天的备份文件）# cd /home # mkdir backup 2、创建累积备份文件夹（存取一个月内的所有备份文件）# mkdir oldback 3、创建脚本文件# touch backup.sh 4、编辑back.sh文件# vi backup.sh backup.sh文件内容 保存并退出 #!bin/bash cd /home/backup echo &quot;You are In Backup Directory&quot; mv backup* /home/oldbackup echo &quot;Old Databases are Moved to oldbackup folder&quot; Now=$(date +&quot;%d-%m-%Y--%H:%M:%S&quot;) File=backup-$Now.sql mysqldump -u用户名 -p密码 -x 你的数据库名 &gt; $File echo &quot;Your Database Backup Successfully Completed&quot; find /home/oldbackup/ -mtime +30 -name &quot;*.sql&quot; -exec rm -rf {} \; echo &quot;Clear Successfully &quot; cd / 5、修改backup.sh的权限# chmod +x /backup.sh 6、设置linux定时任务# crontab -e 0 3 * * * root . /home/backup.sh 注意（系统级的）做系统级配置我们会直接配置 /etc/crontab （用户级的）一般还是建议大家使用 crontab -e ，这样系统也会帮着检查我们配置的脚本语法。]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
       <tags>
         <tag>Linux</tag>
       </tags>
@@ -12,6 +15,9 @@
     <title><![CDATA[github上搭建自己的个人主页]]></title>
     <url>%2F2017%2F12%2F09%2FGitHub-build-personal-page%2F</url>
     <content type="text"><![CDATA[穷屌丝们的春天，程序员应该活的精致一些。一直想有一个拿得出台面的东西，所以最近研究了一下github的个人主页。从无到有，搜寻了很多资料搞了两天（课后时间）觉得网上的搭建个人主页的教程太随意。于是做一下的总结，只愿大家少走弯路 具体步骤如下1、准备工作：github账号、git客户端、域名（一定是.com的）2、新建个人主页仓库进入GitHub后创建一个仓库，仓库的名字一定要起对，比如我的GitHub账号名称是veige所以我应该起 veige.github.io 3、git clone到本机添加index.html文件 //注意要换成自己的github仓库地址 git clone https://github.com/veige/veige.github.io.git找到自己克隆的文件地址，新建index.html &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;mate charest=&quot;utf-8&quot; /&gt; &lt;title&gt;Hello world!&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello world!&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt; 4、push到github打开git客户端并执行以下命令 git add . git commit -m &quot;初始化个人主页仓库&quot; git push 此时便可以通过浏览器访问index.html了，在浏览器输入 veige.github.io 如果此刻页面上出现Hello world! 那么恭喜你 你离成功很近了 5、域名解析域名解析耗费我很长时间，原因是图便宜买了一个.top的域名结果是一直不成功。迫不得已花了￥55在阿里买的.com域名，具体买域名的操作不做赘述 6、添加CNAME文件在与index.html同一级的目录下添加CNAME文件 我买的域名是itxuwei.com则只需要在CNAME文件里编辑一行我的网址即可 www.itxuwei.com 编辑完之后 push到github 即可用 www.itxuwei.com来访问个人主页 git add . git commit -m &quot;提交CNAME文件&quot; git push]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
       <tags>
         <tag>PHP</tag>
       </tags>
@@ -20,6 +26,9 @@
     <title><![CDATA[php实现微信扫码下载apk]]></title>
     <url>%2F2017%2F12%2F09%2FPHP-weixin-download-app%2F</url>
     <content type="text"><![CDATA[因项目需求要搞一个微信扫码下载应用的功能，毕竟大多数人的手机上微信还是比较常见的，比用浏览器扫码用户体验好的多 具体思路 1、服务器的提供下载应用接口 2、借助第三方产生二维码 3、微信扫码浏览器打开 实现步骤1、PHP接口 服务器php下载方法 用于生产验证码的方法名 微信的内置浏览器是无法实现下载应用的，所以需要对微信浏览器单独处理，这里提供一个引导页面（这里的引导页面为一张带箭头的图片，追求完美的可以提供H5页面）指向扫码后的更多选项，选择在浏览器中打开 1234567891011121314151617181920 /** * Description: 下载文件方法 */public function loadApk()&#123; //获取文件名称 实际操作中 查数据库获取最新版本的文件名 $file_name = 'test.apk'; //文件路径 $file_dir = 'upload/soft/'; //判断是否是微信浏览器访问 如果是则提供引导页面 引导页面 if($this-&gt;is_weixin())&#123; echo '&lt;style&gt;body&#123; margin:0; padding:0; background: #222221;&#125;&lt;/style&gt;'; echo '&lt;div style=" height:100%;background-image:url(/static/Index/images/download.png); background-size: 100%;background-repeat: no-repeat;"&gt;&lt;/div&gt;'; die; &#125; //输出文件 $this-&gt;sendStreamFile($file_name,$file_dir);&#125; php实现文件流下载方法 1234567891011121314151617181920212223242526 /** php 发送流文件 * @param $file_name String $url 接收的路径 * @param $file_dir String $file 要发送的文件 * @return boolean */ private function sendStreamFile($file_name, $file_dir)&#123; //检查文件是否存在 if (! file_exists ( $file_dir . $file_name )) &#123; echo "文件找不到"; exit (); &#125; else &#123; //打开文件 $file = fopen ( $file_dir . $file_name, "r" ); //输入文件标签 Header ( "Content-type: application/octet-stream" ); Header ( "Accept-Ranges: bytes" ); Header ( "Accept-Length: " . filesize ( $file_dir . $file_name ) ); Header ( "Content-Disposition: attachment; filename=" . $file_name ); //输出文件内容 //读取文件内容并直接输出到浏览器 echo fread ( $file, filesize ( $file_dir . $file_name ) ); fclose ( $file ); exit (); &#125; &#125; 微信浏览器验证 123456789//判断微信浏览器function is_weixin()&#123; if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) &#123; return true; &#125; return false;&#125; 2、生成验证码 验证码生成器 网上有很多 以草料为例 3、扫一扫测试一下]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
       <tags>
         <tag>PHP</tag>
       </tags>
