@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟的我被这篇文章坑坏了菜鸟教程D">
+<meta name="description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟教程Docker安装nginx">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker setting">
+<meta property="og:title" content="Docker 制作contos下lnmp环境">
 <meta property="og:url" content="https://veige.github.io/2017/12/09/Docker-setting/index.html">
 <meta property="og:site_name" content="veige的博客">
-<meta property="og:description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟的我被这篇文章坑坏了菜鸟教程D">
+<meta property="og:description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟教程Docker安装nginx">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true">
-<meta property="og:updated_time" content="2017-12-14T08:36:40.086Z">
+<meta property="og:updated_time" content="2017-12-21T03:00:11.248Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker setting">
-<meta name="twitter:description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟的我被这篇文章坑坏了菜鸟教程D">
+<meta name="twitter:title" content="Docker 制作contos下lnmp环境">
+<meta name="twitter:description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟教程Docker安装nginx">
 <meta name="twitter:image" content="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true">
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>Docker setting | veige的博客</title>
+  <title>Docker 制作contos下lnmp环境 | veige的博客</title>
   
 
 
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker setting</h1>
+          <h1 class="post-title" itemprop="name headline">Docker 制作contos下lnmp环境</h1>
         
 
         <div class="post-meta">
@@ -380,7 +380,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" rel="gallery_cjbbnzs4x0000nkx8ks1fhwo0"
+                 href="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" rel="gallery_cjbfwhpb400005kx8qu4llnyf"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" itemprop="contentUrl"/>
               </a>
@@ -398,8 +398,13 @@
 <blockquote>
 <p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
 </blockquote>
-<p>菜鸟的我被这篇文章坑坏了<br><a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程Docker安装nginx</a></p>
-<p>未完 待续 改bug中。。。。</p>
+<p><a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程Docker安装nginx</a></p>
+<p><a href="http://http://dockone.io/article/126" target="_blank" rel="noopener">Docker的应用场景</a></p>
+<h4 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h4><p>本文介绍安装的docker是基于VMware虚拟机下64位的contOS-7.4，当然保证系统能联网，yum正常使用</p>
+<ul>
+<li>具体流程详见<a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程Docker安装nginx</a> </li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#uname -r</span><br><span class="line"></span><br><span class="line">#yum -y install docker</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -627,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#百度的力量"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;" class="headerlink" title="&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;"></a>&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#百度的力量"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;" class="headerlink" title="&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;"></a>&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Docker"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;Docker" class="headerlink" title="&#x5B89;&#x88C5;Docker"></a>&#x5B89;&#x88C5;Docker</span></a></li></ol></div>
             
 
           </div>

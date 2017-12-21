@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Docker setting]]></title>
+    <title><![CDATA[Docker 制作contos下lnmp环境]]></title>
     <url>%2F2017%2F12%2F09%2FDocker-setting%2F</url>
-    <content type="text"><![CDATA[偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释 Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。 菜鸟的我被这篇文章坑坏了菜鸟教程Docker安装nginx 未完 待续 改bug中。。。。]]></content>
+    <content type="text"><![CDATA[偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释 Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。 菜鸟教程Docker安装nginx Docker的应用场景 安装Docker本文介绍安装的docker是基于VMware虚拟机下64位的contOS-7.4，当然保证系统能联网，yum正常使用 具体流程详见菜鸟教程Docker安装nginx 1234#uname -r#yum -y install docker]]></content>
       <categories>
         <category>日志</category>
       </categories>
