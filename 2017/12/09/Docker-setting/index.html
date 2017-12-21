@@ -82,15 +82,15 @@
 <meta name="description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟教程Docker安装nginx">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker 制作contos下lnmp环境">
+<meta property="og:title" content="Docker 制作centos下lnmp环境">
 <meta property="og:url" content="https://veige.github.io/2017/12/09/Docker-setting/index.html">
 <meta property="og:site_name" content="veige的博客">
 <meta property="og:description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟教程Docker安装nginx">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true">
-<meta property="og:updated_time" content="2017-12-21T03:03:48.144Z">
+<meta property="og:updated_time" content="2017-12-21T05:54:46.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker 制作contos下lnmp环境">
+<meta name="twitter:title" content="Docker 制作centos下lnmp环境">
 <meta name="twitter:description" content="偶然间在朋友圈看到猿友在研究Docker，于是不甘落后的我开始了疯狂百度，准备在逼格上超过他，以下便是我的探索之路 百度的力量百度提供的Docker解释  Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。  菜鸟教程Docker安装nginx">
 <meta name="twitter:image" content="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true">
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>Docker 制作contos下lnmp环境 | veige的博客</title>
+  <title>Docker 制作centos下lnmp环境 | veige的博客</title>
   
 
 
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker 制作contos下lnmp环境</h1>
+          <h1 class="post-title" itemprop="name headline">Docker 制作centos下lnmp环境</h1>
         
 
         <div class="post-meta">
@@ -380,7 +380,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" rel="gallery_cjbfwovuu0000vcx8n4hl1n6p"
+                 href="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" rel="gallery_cjbg2p5ib00007ox8vifr6xdf"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" itemprop="contentUrl"/>
               </a>
@@ -400,11 +400,12 @@
 </blockquote>
 <p><a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程Docker安装nginx</a></p>
 <p><a href="http://http://dockone.io/article/126" target="_blank" rel="noopener">Docker的应用场景</a></p>
-<h4 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h4><p>本文介绍安装的docker是基于VMware虚拟机下64位的contOS-7.4，当然保证系统能联网，yum正常使用</p>
-<ul>
-<li>具体流程详见<a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程Docker安装nginx</a> </li>
-</ul>
+<h4 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h4><p>本文介绍安装的docker是基于VMware虚拟机下64位的centOS-7.4，当然保证系统能联网，yum正常使用。具体流程详见<a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程Docker安装nginx</a> </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># uname -r</span><br><span class="line"># yum -y install docker</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/veige/image/blob/master/20171221/install.png?raw=true" alt=""><br>出现 Complete! 恭喜你安装成功</p>
+<h4 id="下载centos7镜像"><a href="#下载centos7镜像" class="headerlink" title="下载centos7镜像"></a>下载centos7镜像</h4><p>docker pull命令是从远程下载镜像的命令,此处下载镜像目的是让我新创建的容器要运行在centOS下,这里docker pull的地址是从<a href="https://hub.docker.com" target="_blank" rel="noopener">https://hub.docker.com</a> 搜索获取的</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># service docker start</span><br><span class="line"># docker pull docker.cn/docker/centos:centos7</span><br><span class="line"># docker images</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/veige/image/blob/master/20171221/download_centOS.png?raw=true" alt=""></p>
 
       
     </div>
@@ -632,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#百度的力量"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;" class="headerlink" title="&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;"></a>&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Docker"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;Docker" class="headerlink" title="&#x5B89;&#x88C5;Docker"></a>&#x5B89;&#x88C5;Docker</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#百度的力量"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;" class="headerlink" title="&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;"></a>&#x767E;&#x5EA6;&#x7684;&#x529B;&#x91CF;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Docker"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;Docker" class="headerlink" title="&#x5B89;&#x88C5;Docker"></a>&#x5B89;&#x88C5;Docker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载centos7镜像"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x4E0B;&#x8F7D;centos7&#x955C;&#x50CF;" class="headerlink" title="&#x4E0B;&#x8F7D;centos7&#x955C;&#x50CF;"></a>&#x4E0B;&#x8F7D;centos7&#x955C;&#x50CF;</span></a></li></ol></div>
             
 
           </div>
