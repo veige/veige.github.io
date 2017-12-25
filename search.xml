@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[天空之城]]></title>
+    <url>%2F2017%2F12%2F25%2FHarmonica-First%2F</url>
+    <content type="text"><![CDATA[天空之城]]></content>
+      <categories>
+        <category>口琴</category>
+      </categories>
+      <tags>
+        <tag>口琴</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[lnmp环境搭建]]></title>
     <url>%2F2017%2F12%2F25%2Flinux-nginx-mysql-php%2F</url>
     <content type="text"><![CDATA[lnmp环境搭建]]></content>
