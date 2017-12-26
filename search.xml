@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[lnmp环境搭建]]></title>
-    <url>%2F2017%2F12%2F25%2Flinux-nginx-mysql-php%2F</url>
-    <content type="text"><![CDATA[lnmp环境搭建安装前准备，首先centOS能够联网，本文介绍的安装基于centOS7.5 安装nginx123456789101112131415161718192021222324# cd /# mkdir -p /home/tgz# cd /home/tgz# yum install wget# yum install pcre# yum install openssl*# yum install tar# yum -y install gcc gcc-c++ autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers make gd gd2 gd-devel gd2-devel# wget https://ftp.pcre.org/pub/pcre/pcre-8.36.tar.gz# wget http://zlib.net/zlib-1.2.11.tar.gz# wget http://nginx.org/download/nginx-1.9.8.tar.gz# tar zxvf pcre-8.36.tar.gz# tar zxvf zlib-1.2.11.tar.gz# tar zxvf nginx-1.9.8.tar.gz# cd nginx-1.9.8# ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-pcre=../pcre-8.36 --with-zlib=../zlib-1.2.11# make &amp;&amp; make install# cd /usr/local/nginx开启nginx服务# sbin/nginx终止nginx 服务# sbin/nginx -s stop 安装PHP 并配置fpm与nginx通信12345678910111213141516171819202122# cd /home/tgz# wget http://mirrors.sohu.com/php/php-7.2.0.tar.gz # tar zxvf php-7.2.0.tar.gz# cd php-7.2.0# ./configure --prefix=/usr/local/php-fpm --enable-fpm --with-zlib --with-pdo-mysql --with-mysql --with-gd --with-png-dir=/usr/lib64 --with-jpeg-dir=/usr/lib64 --with-freetype-dir=/usr/lib64 --enable-memcache# make &amp;&amp; make install# cd /usr/local/php-fpm# cp etc/php-fpm.conf.default etc/php-fpm.confphp7.0版本特有# cp etc/php-fpm.d/www.conf.default www.conf 开启php-fpm服务# sbin/php-fpm验证是否开启服务# ps -e | grep php-fpm配置nginx通信php-fpm# cd /usr/local/nginx/conf修改nginx配置文件 见图2-1# vi nginx.conf重启nginx# cd /usr/local/nginx# sbin/nginx -s stop# sbin/nginx 图2-1 安装mysql1234567# yum install cmake# cd /home/tgz# wget http://ftp.ntu.edu.tw/MySQL/Downloads/MySQL-5.6/mysql-5.6.37.tar.gz# tar zxvf mysql-5.6.37.tar.gz# cd mysql-5.6.37# cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/usr/local/mysql/data# make &amp;&amp; make install]]></content>
-      <categories>
-        <category>日志</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[天空之城]]></title>
     <url>%2F2017%2F12%2F25%2FHarmonica-First%2F</url>
     <content type="text"><![CDATA[天空之城当《天空之城》的音乐响起时，内心依旧会变得平静许多。如一汪清泉般慰藉着这颗孤独的心灵。]]></content>
@@ -20,6 +9,17 @@
       </categories>
       <tags>
         <tag>口琴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[lnmp环境搭建]]></title>
+    <url>%2F2017%2F12%2F25%2Flinux-nginx-mysql-php%2F</url>
+    <content type="text"><![CDATA[lnmp环境搭建安装前准备，首先centOS能够联网，本文介绍的安装基于centOS7.5 安装nginx123456789101112131415161718192021222324# cd /# mkdir -p /home/tgz# cd /home/tgz# yum install wget# yum install pcre# yum install openssl*# yum install tar# yum -y install gcc gcc-c++ autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers make gd gd2 gd-devel gd2-devel# wget https://ftp.pcre.org/pub/pcre/pcre-8.36.tar.gz# wget http://zlib.net/zlib-1.2.11.tar.gz# wget http://nginx.org/download/nginx-1.9.8.tar.gz# tar zxvf pcre-8.36.tar.gz# tar zxvf zlib-1.2.11.tar.gz# tar zxvf nginx-1.9.8.tar.gz# cd nginx-1.9.8# ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-pcre=../pcre-8.36 --with-zlib=../zlib-1.2.11# make &amp;&amp; make install# cd /usr/local/nginx开启nginx服务# sbin/nginx终止nginx 服务# sbin/nginx -s stop 安装PHP 并配置fpm与nginx通信12345678910111213141516171819202122# cd /home/tgz# wget http://mirrors.sohu.com/php/php-7.2.0.tar.gz # tar zxvf php-7.2.0.tar.gz# cd php-7.2.0# ./configure --prefix=/usr/local/php-fpm --enable-fpm --with-zlib --with-pdo-mysql --with-mysql --with-gd --with-png-dir=/usr/lib64 --with-jpeg-dir=/usr/lib64 --with-freetype-dir=/usr/lib64 --enable-memcache# make &amp;&amp; make install# cd /usr/local/php-fpm# cp etc/php-fpm.conf.default etc/php-fpm.confphp7.0版本特有# cp etc/php-fpm.d/www.conf.default www.conf 开启php-fpm服务# sbin/php-fpm验证是否开启服务# ps -e | grep php-fpm配置nginx通信php-fpm# cd /usr/local/nginx/conf修改nginx配置文件 见图2-1# vi nginx.conf重启nginx# cd /usr/local/nginx# sbin/nginx -s stop# sbin/nginx 图2-1 安装mysql12345678910111213141516171819202122232425# yum install cmake# cd /home/tgz# wget http://ftp.ntu.edu.tw/MySQL/Downloads/MySQL-5.6/mysql-5.6.37.tar.gz# tar zxvf mysql-5.6.37.tar.gz# cd mysql-5.6.37# cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/usr/local/mysql/data# make &amp;&amp; make install#cd /usr/local/mysql# groupadd mysql# useradd -r -g mysql mysql# chown -R mysql .# chgrp -R mysql .删除可能的旧的/etc/my.cnf# rm -f /etc/my.cnf# ./scripts/mysql_install_db --user=mysql# chown -R root .# chown -R mysql data# cp support-files/my-default.cnf /etc/my.cnf启动mysqld：# bin/mysqld_safe --user=mysql &amp;守护进程# cp support-files/mysql.server /etc/init.d/mysqld修改配置文件 见图3-1# vi /etc/init.d/mysqld 图3-1]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -45,9 +45,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[php实现微信扫码下载apk]]></title>
-    <url>%2F2017%2F12%2F09%2FPHP-weixin-download-app%2F</url>
-    <content type="text"><![CDATA[因项目需求要搞一个微信扫码下载应用的功能，毕竟大多数人的手机上微信还是比较常见的，比用浏览器扫码用户体验好的多 具体思路 1、服务器的提供下载应用接口 2、借助第三方产生二维码 3、微信扫码浏览器打开 实现步骤1、PHP接口 服务器php下载方法 用于生产验证码的方法名 微信的内置浏览器是无法实现下载应用的，所以需要对微信浏览器单独处理，这里提供一个引导页面（这里的引导页面为一张带箭头的图片，追求完美的可以提供H5页面）指向扫码后的更多选项，选择在浏览器中打开 1234567891011121314151617181920 /** * Description: 下载文件方法 */public function loadApk()&#123; //获取文件名称 实际操作中 查数据库获取最新版本的文件名 $file_name = 'test.apk'; //文件路径 $file_dir = 'upload/soft/'; //判断是否是微信浏览器访问 如果是则提供引导页面 引导页面 if($this-&gt;is_weixin())&#123; echo '&lt;style&gt;body&#123; margin:0; padding:0; background: #222221;&#125;&lt;/style&gt;'; echo '&lt;div style=" height:100%;background-image:url(/static/Index/images/download.png); background-size: 100%;background-repeat: no-repeat;"&gt;&lt;/div&gt;'; die; &#125; //输出文件 $this-&gt;sendStreamFile($file_name,$file_dir);&#125; php实现文件流下载方法 1234567891011121314151617181920212223242526 /** php 发送流文件 * @param $file_name String $url 接收的路径 * @param $file_dir String $file 要发送的文件 * @return boolean */ private function sendStreamFile($file_name, $file_dir)&#123; //检查文件是否存在 if (! file_exists ( $file_dir . $file_name )) &#123; echo "文件找不到"; exit (); &#125; else &#123; //打开文件 $file = fopen ( $file_dir . $file_name, "r" ); //输入文件标签 Header ( "Content-type: application/octet-stream" ); Header ( "Accept-Ranges: bytes" ); Header ( "Accept-Length: " . filesize ( $file_dir . $file_name ) ); Header ( "Content-Disposition: attachment; filename=" . $file_name ); //输出文件内容 //读取文件内容并直接输出到浏览器 echo fread ( $file, filesize ( $file_dir . $file_name ) ); fclose ( $file ); exit (); &#125; &#125; 微信浏览器验证 123456789//判断微信浏览器function is_weixin()&#123; if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) &#123; return true; &#125; return false;&#125; 2、生成验证码 验证码生成器 网上有很多 以草料为例 3、扫一扫测试一下]]></content>
+    <title><![CDATA[github上搭建自己的个人主页]]></title>
+    <url>%2F2017%2F12%2F09%2FGitHub-build-personal-page%2F</url>
+    <content type="text"><![CDATA[穷屌丝们的春天，程序员应该活的精致一些。一直想有一个拿得出台面的东西，所以最近研究了一下github的个人主页。从无到有，搜寻了很多资料搞了两天（课后时间）觉得网上的搭建个人主页的教程太随意。于是做一下的总结，只愿大家少走弯路 具体步骤如下1、准备工作：github账号、git客户端、域名（一定是.com的）2、新建个人主页仓库进入GitHub后创建一个仓库，仓库的名字一定要起对，比如我的GitHub账号名称是veige所以我应该起 veige.github.io 3、git clone到本机添加index.html文件 //注意要换成自己的github仓库地址 git clone https://github.com/veige/veige.github.io.git找到自己克隆的文件地址，新建index.html &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;mate charest=&quot;utf-8&quot; /&gt; &lt;title&gt;Hello world!&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello world!&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt; 4、push到github打开git客户端并执行以下命令 git add . git commit -m &quot;初始化个人主页仓库&quot; git push 此时便可以通过浏览器访问index.html了，在浏览器输入 veige.github.io 如果此刻页面上出现Hello world! 那么恭喜你 你离成功很近了 5、域名解析域名解析耗费我很长时间，原因是图便宜买了一个.top的域名结果是一直不成功。迫不得已花了￥55在阿里买的.com域名，具体买域名的操作不做赘述 6、添加CNAME文件在与index.html同一级的目录下添加CNAME文件 我买的域名是itxuwei.com则只需要在CNAME文件里编辑一行我的网址即可 www.itxuwei.com 编辑完之后 push到github 即可用 www.itxuwei.com来访问个人主页 git add . git commit -m &quot;提交CNAME文件&quot; git push 推荐博客http://blog.csdn.net/qq_33699981/article/details/72716951]]></content>
       <categories>
         <category>日志</category>
       </categories>
@@ -56,9 +56,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[github上搭建自己的个人主页]]></title>
-    <url>%2F2017%2F12%2F09%2FGitHub-build-personal-page%2F</url>
-    <content type="text"><![CDATA[穷屌丝们的春天，程序员应该活的精致一些。一直想有一个拿得出台面的东西，所以最近研究了一下github的个人主页。从无到有，搜寻了很多资料搞了两天（课后时间）觉得网上的搭建个人主页的教程太随意。于是做一下的总结，只愿大家少走弯路 具体步骤如下1、准备工作：github账号、git客户端、域名（一定是.com的）2、新建个人主页仓库进入GitHub后创建一个仓库，仓库的名字一定要起对，比如我的GitHub账号名称是veige所以我应该起 veige.github.io 3、git clone到本机添加index.html文件 //注意要换成自己的github仓库地址 git clone https://github.com/veige/veige.github.io.git找到自己克隆的文件地址，新建index.html &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;mate charest=&quot;utf-8&quot; /&gt; &lt;title&gt;Hello world!&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello world!&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt; 4、push到github打开git客户端并执行以下命令 git add . git commit -m &quot;初始化个人主页仓库&quot; git push 此时便可以通过浏览器访问index.html了，在浏览器输入 veige.github.io 如果此刻页面上出现Hello world! 那么恭喜你 你离成功很近了 5、域名解析域名解析耗费我很长时间，原因是图便宜买了一个.top的域名结果是一直不成功。迫不得已花了￥55在阿里买的.com域名，具体买域名的操作不做赘述 6、添加CNAME文件在与index.html同一级的目录下添加CNAME文件 我买的域名是itxuwei.com则只需要在CNAME文件里编辑一行我的网址即可 www.itxuwei.com 编辑完之后 push到github 即可用 www.itxuwei.com来访问个人主页 git add . git commit -m &quot;提交CNAME文件&quot; git push 推荐博客http://blog.csdn.net/qq_33699981/article/details/72716951]]></content>
+    <title><![CDATA[php实现微信扫码下载apk]]></title>
+    <url>%2F2017%2F12%2F09%2FPHP-weixin-download-app%2F</url>
+    <content type="text"><![CDATA[因项目需求要搞一个微信扫码下载应用的功能，毕竟大多数人的手机上微信还是比较常见的，比用浏览器扫码用户体验好的多 具体思路 1、服务器的提供下载应用接口 2、借助第三方产生二维码 3、微信扫码浏览器打开 实现步骤1、PHP接口 服务器php下载方法 用于生产验证码的方法名 微信的内置浏览器是无法实现下载应用的，所以需要对微信浏览器单独处理，这里提供一个引导页面（这里的引导页面为一张带箭头的图片，追求完美的可以提供H5页面）指向扫码后的更多选项，选择在浏览器中打开 1234567891011121314151617181920 /** * Description: 下载文件方法 */public function loadApk()&#123; //获取文件名称 实际操作中 查数据库获取最新版本的文件名 $file_name = 'test.apk'; //文件路径 $file_dir = 'upload/soft/'; //判断是否是微信浏览器访问 如果是则提供引导页面 引导页面 if($this-&gt;is_weixin())&#123; echo '&lt;style&gt;body&#123; margin:0; padding:0; background: #222221;&#125;&lt;/style&gt;'; echo '&lt;div style=" height:100%;background-image:url(/static/Index/images/download.png); background-size: 100%;background-repeat: no-repeat;"&gt;&lt;/div&gt;'; die; &#125; //输出文件 $this-&gt;sendStreamFile($file_name,$file_dir);&#125; php实现文件流下载方法 1234567891011121314151617181920212223242526 /** php 发送流文件 * @param $file_name String $url 接收的路径 * @param $file_dir String $file 要发送的文件 * @return boolean */ private function sendStreamFile($file_name, $file_dir)&#123; //检查文件是否存在 if (! file_exists ( $file_dir . $file_name )) &#123; echo "文件找不到"; exit (); &#125; else &#123; //打开文件 $file = fopen ( $file_dir . $file_name, "r" ); //输入文件标签 Header ( "Content-type: application/octet-stream" ); Header ( "Accept-Ranges: bytes" ); Header ( "Accept-Length: " . filesize ( $file_dir . $file_name ) ); Header ( "Content-Disposition: attachment; filename=" . $file_name ); //输出文件内容 //读取文件内容并直接输出到浏览器 echo fread ( $file, filesize ( $file_dir . $file_name ) ); fclose ( $file ); exit (); &#125; &#125; 微信浏览器验证 123456789//判断微信浏览器function is_weixin()&#123; if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) &#123; return true; &#125; return false;&#125; 2、生成验证码 验证码生成器 网上有很多 以草料为例 3、扫一扫测试一下]]></content>
       <categories>
         <category>日志</category>
       </categories>
