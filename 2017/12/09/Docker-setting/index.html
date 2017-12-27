@@ -380,7 +380,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" rel="gallery_cjbnifi9i0000m8x8qsx59d65"
+                 href="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" rel="gallery_cjbohupgc0006uwx862vg0tn8"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://github.com/veige/image/blob/master/20171208/Docker.png?raw=true" itemprop="contentUrl"/>
               </a>
@@ -406,21 +406,21 @@
 <h4 id="三、下载centos7镜像"><a href="#三、下载centos7镜像" class="headerlink" title="三、下载centos7镜像"></a>三、下载centos7镜像</h4><p>docker pull命令是从远程下载镜像的命令,此处下载镜像目的是让我新创建的容器要运行在centOS下,这里docker pull的地址是从<a href="https://hub.docker.com" target="_blank" rel="noopener">https://hub.docker.com</a> 搜索获取的</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># service docker start</span><br><span class="line"># docker pull openshift/base-centos7</span><br><span class="line"># docker images</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/veige/image/blob/master/20171221/download_centOS.png?raw=true" alt=""></p>
-<h4 id="四、运行容器"><a href="#四、运行容器" class="headerlink" title="四、运行容器"></a>四、运行容器</h4><p>容器里运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker run -i -t openshift/base-centos7 /bin/bash</span><br></pre></td></tr></table></figure></p>
+<h4 id="四、运行容器"><a href="#四、运行容器" class="headerlink" title="四、运行容器"></a>四、运行容器</h4><p>容器里运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker run -i -t openshift/base-centos7 /bin/bash</span></span><br></pre></td></tr></table></figure></p>
 <p><img src="https://github.com/veige/image/blob/master/20171221/run_result.png?raw=true" alt=""></p>
-<p>接着就是在容器里安装lnmp，详情请参考<br><a href="https://veige.github.io/2017/12/25/linux-nginx-mysql-php/#more">lnmp环境搭建</a><br>安装完成后<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> exit</span><br></pre></td></tr></table></figure></p>
-<h4 id="五、生成镜像"><a href="#五、生成镜像" class="headerlink" title="五、生成镜像"></a>五、生成镜像</h4><p>查看刚才运行的容器ID<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker ps -lq</span><br></pre></td></tr></table></figure></p>
-<p>提交生成新的镜像 注：这里的489d2 是任意去的上一步操作中id的前5位<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker commit 489d2 vckai/dev:v1</span><br></pre></td></tr></table></figure></p>
-<p>查看所有镜像<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker images</span><br></pre></td></tr></table></figure></p>
+<p>接着就是在容器里安装lnmp，详情请参考<br><a href="https://veige.github.io/2017/12/25/linux-nginx-mysql-php/#more">lnmp环境搭建</a><br>安装完成后<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">exit</span></span></span><br></pre></td></tr></table></figure></p>
+<h4 id="五、生成镜像"><a href="#五、生成镜像" class="headerlink" title="五、生成镜像"></a>五、生成镜像</h4><p>查看刚才运行的容器ID<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker ps -lq</span></span><br></pre></td></tr></table></figure></p>
+<p>提交生成新的镜像 注：这里的489d2 是任意去的上一步操作中id的前5位<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker commit 489d2 vckai/dev:v1</span></span><br></pre></td></tr></table></figure></p>
+<p>查看所有镜像<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker images</span></span><br></pre></td></tr></table></figure></p>
 <p><img src="https://github.com/veige/image/blob/master/20171226/docker_image.png?raw=true" alt=""></p>
-<h4 id="六、启动镜像"><a href="#六、启动镜像" class="headerlink" title="六、启动镜像"></a>六、启动镜像</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker run -d -p 80:80 -v /web:/data/www vckai/dev:v1 /sbin/init</span><br></pre></td></tr></table></figure>
+<h4 id="六、启动镜像"><a href="#六、启动镜像" class="headerlink" title="六、启动镜像"></a>六、启动镜像</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker run -d -p 80:80 -v /web:/data/www vckai/dev:v1 /sbin/init</span></span><br></pre></td></tr></table></figure>
 <p>-d是以Daemon模式运行。<br>-p 80:80 是将本地80端口映射到容器的80端口，现在可以在本地使用<a href="http://localhost访问" target="_blank" rel="noopener">http://localhost访问</a><br>-v /web:/data/www 是将本地的/web目录挂载到容器的/data/www(容器配置的web目录)目录下。<br>vckai/dev:v1 是要运行的镜像名称。<br> /sbin/init 是容器运行后的系统初始化操作，主要用于启动nginx，php-fpm，mysql服务。<br><img src="https://github.com/veige/image/blob/master/20171226/docker_start.png?raw=true" alt=""></p>
 <ul>
 <li><p>查看docker运行中的镜像</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker ps</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker ps</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>停止/重启/kill/启动容器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker stop/restart/kill/start &lt;ID/Name&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> docker stop/restart/<span class="built_in">kill</span>/start &lt;ID/Name&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="http://www.vckai.com/p/29" target="_blank" rel="noopener">Docker创建centos的LNMP镜像</a></p>
@@ -448,7 +448,7 @@
 <span style="font-weight:blod">版权声明</span>
 <img src="http://7xqmjb.com1.z0.glb.clouddn.com/2017020242973cc.png" >
 <br/>
-<p style="font-size: 10px;line-height: 30px">本文首发于<a href="veige.github.io" style="color:#258FC6">veige</a> 的博客（ <a href="www.itxuwei.com" style="color:#258FC6">veige.github.io</a> ），版权所有，侵权必究。</p>
+<p style="font-size: 10px;line-height: 30px">本文首发于<a href="veige.github.io" style="color:#258FC6">veige</a> 的博客（ <a href="veige.github.io" style="color:#258FC6">veige.github.io</a> ），版权所有，侵权必究。</p>
 </div>
 </div>
 
