@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[lnmp环境搭建]]></title>
-    <url>%2F2017%2F12%2F25%2Flinux-nginx-mysql-php%2F</url>
-    <content type="text"><![CDATA[lnmp环境搭建安装前准备，首先centOS能够联网，本文介绍的安装基于centOS7.5 安装nginx123456789101112131415161718192021222324# cd /# mkdir -p /home/tgz# cd /home/tgz# yum install wget# yum install pcre# yum install openssl*# yum install tar# yum -y install gcc gcc-c++ autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers make gd gd2 gd-devel gd2-devel# wget https://ftp.pcre.org/pub/pcre/pcre-8.36.tar.gz# wget http://zlib.net/zlib-1.2.11.tar.gz# wget http://nginx.org/download/nginx-1.9.8.tar.gz# tar zxvf pcre-8.36.tar.gz# tar zxvf zlib-1.2.11.tar.gz# tar zxvf nginx-1.9.8.tar.gz# cd nginx-1.9.8# ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-pcre=../pcre-8.36 --with-zlib=../zlib-1.2.11# make &amp;&amp; make install# cd /usr/local/nginx开启nginx服务# sbin/nginx终止nginx 服务# sbin/nginx -s stop 安装PHP 并配置fpm与nginx通信12345678910111213141516171819202122# cd /home/tgz# wget http://mirrors.sohu.com/php/php-7.2.0.tar.gz # tar zxvf php-7.2.0.tar.gz# cd php-7.2.0# ./configure --prefix=/usr/local/php-fpm --enable-fpm --with-zlib --with-pdo-mysql --with-mysql --with-gd --with-png-dir=/usr/lib64 --with-jpeg-dir=/usr/lib64 --with-freetype-dir=/usr/lib64 --enable-memcache# make &amp;&amp; make install# cd /usr/local/php-fpm# cp etc/php-fpm.conf.default etc/php-fpm.confphp7.0版本特有# cp etc/php-fpm.d/www.conf.default www.conf 开启php-fpm服务# sbin/php-fpm验证是否开启服务# ps -e | grep php-fpm配置nginx通信php-fpm# cd /usr/local/nginx/conf修改nginx配置文件 见图2-1# vi nginx.conf重启nginx# cd /usr/local/nginx# sbin/nginx -s stop# sbin/nginx 图2-1 安装mysql12345678910111213141516171819202122232425# yum install cmake# cd /home/tgz# wget http://ftp.ntu.edu.tw/MySQL/Downloads/MySQL-5.6/mysql-5.6.37.tar.gz# tar zxvf mysql-5.6.37.tar.gz# cd mysql-5.6.37# cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/usr/local/mysql/data# make &amp;&amp; make install# cd /usr/local/mysql# groupadd mysql# useradd -r -g mysql mysql# chown -R mysql .# chgrp -R mysql .删除可能的旧的/etc/my.cnf# rm -f /etc/my.cnf# ./scripts/mysql_install_db --user=mysql# chown -R root .# chown -R mysql data# cp support-files/my-default.cnf /etc/my.cnf启动mysqld：# bin/mysqld_safe --user=mysql &amp;守护进程# cp support-files/mysql.server /etc/init.d/mysqld修改配置文件 见图3-1# vi /etc/init.d/mysqld 图3-1]]></content>
-      <categories>
-        <category>日志</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[天空之城]]></title>
     <url>%2F2017%2F12%2F25%2FHarmonica-First%2F</url>
     <content type="text"><![CDATA[天空之城当《天空之城》的音乐响起时，内心依旧会变得平静许多。如一汪清泉般慰藉着这颗孤独的心灵。]]></content>
@@ -20,6 +9,17 @@
       </categories>
       <tags>
         <tag>口琴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[lnmp环境搭建]]></title>
+    <url>%2F2017%2F12%2F25%2Flinux-nginx-mysql-php%2F</url>
+    <content type="text"><![CDATA[lnmp环境搭建安装前准备，首先centOS能够联网，本文介绍的安装基于centOS7.5 安装nginx123456789101112131415161718192021222324# cd /# mkdir -p /home/tgz# cd /home/tgz# yum install wget# yum install pcre# yum install openssl*# yum install tar# yum -y install gcc gcc-c++ autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers make gd gd2 gd-devel gd2-devel# wget https://ftp.pcre.org/pub/pcre/pcre-8.36.tar.gz# wget http://zlib.net/zlib-1.2.11.tar.gz# wget http://nginx.org/download/nginx-1.9.8.tar.gz# tar zxvf pcre-8.36.tar.gz# tar zxvf zlib-1.2.11.tar.gz# tar zxvf nginx-1.9.8.tar.gz# cd nginx-1.9.8# ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-pcre=../pcre-8.36 --with-zlib=../zlib-1.2.11# make &amp;&amp; make install# cd /usr/local/nginx开启nginx服务# sbin/nginx终止nginx 服务# sbin/nginx -s stop 安装PHP 并配置fpm与nginx通信12345678910111213141516171819202122# cd /home/tgz# wget http://mirrors.sohu.com/php/php-7.2.0.tar.gz # tar zxvf php-7.2.0.tar.gz# cd php-7.2.0# ./configure --prefix=/usr/local/php-fpm --enable-fpm --with-zlib --with-pdo-mysql --with-mysql --with-gd --with-png-dir=/usr/lib64 --with-jpeg-dir=/usr/lib64 --with-freetype-dir=/usr/lib64 --enable-memcache# make &amp;&amp; make install# cd /usr/local/php-fpm# cp etc/php-fpm.conf.default etc/php-fpm.confphp7.0版本特有# cp etc/php-fpm.d/www.conf.default www.conf 开启php-fpm服务# sbin/php-fpm验证是否开启服务# ps -e | grep php-fpm配置nginx通信php-fpm# cd /usr/local/nginx/conf修改nginx配置文件 见图2-1# vi nginx.conf重启nginx# cd /usr/local/nginx# sbin/nginx -s stop# sbin/nginx 图2-1 安装mysql12345678910111213141516171819202122232425# yum install cmake# cd /home/tgz# wget http://ftp.ntu.edu.tw/MySQL/Downloads/MySQL-5.6/mysql-5.6.37.tar.gz# tar zxvf mysql-5.6.37.tar.gz# cd mysql-5.6.37# cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/usr/local/mysql/data# make &amp;&amp; make install# cd /usr/local/mysql# groupadd mysql# useradd -r -g mysql mysql# chown -R mysql .# chgrp -R mysql .删除可能的旧的/etc/my.cnf# rm -f /etc/my.cnf# ./scripts/mysql_install_db --user=mysql# chown -R root .# chown -R mysql data# cp support-files/my-default.cnf /etc/my.cnf启动mysqld：# bin/mysqld_safe --user=mysql &amp;守护进程# cp support-files/mysql.server /etc/init.d/mysqld修改配置文件 见图3-1# vi /etc/init.d/mysqld 图3-1]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
