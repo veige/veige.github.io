@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[BFS]]></title>
+    <title><![CDATA[广度优先算法（BFS）]]></title>
     <url>%2F2018%2F01%2F12%2FBFS%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[前言广度优先搜索（也称宽度优先搜索，缩写BFS，以下采用广度来描述）是连通图的一种遍历策略。因为它的思想是从一个顶点V0开始，辐射状地优先遍历其周围较广的区域，故得名。 A*寻路算法广度优先BFS算法]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[lnmp环境搭建]]></title>
