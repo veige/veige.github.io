@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据库连接池]]></title>
+    <url>%2F2018%2F02%2F25%2Fdatabase-pool%2F</url>
+    <content type="text"><![CDATA[早期数据库连接1、原理 一般来说，java应用程序访问数据库的过程是： 装载数据库驱动程序 通过jdbc建立数据库连接 访问数据库，执行sql语句 断开数据库连接 2、 代码 123456789101112131415161718Public void FindAllUsers()&#123; //1、装载sqlserver驱动对象 DriverManager.registerDriver(new SQLServerDriver()); //2、通过JDBC建立数据库连接 Connection con =DriverManager.getConnection("jdbc:sqlserver://192.168.2.6:1433;DatabaseName=customer", "sa", "123"); //3、创建状态 Statement state =con.createStatement(); //4、查询数据库并返回结果 ResultSet result =state.executeQuery("select * from users"); //5、输出查询结果 while(result.next())&#123; System.out.println(result.getString("email")); &#125; //6、断开数据库连接 result.close(); state.close(); con.close(); &#125;]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[广度优先算法（BFS）]]></title>
     <url>%2F2018%2F01%2F12%2FBFS%2F</url>
-    <content type="text"><![CDATA[前言广度优先搜索（也称宽度优先搜索，缩写BFS，以下采用广度来描述）是连通图的一种遍历策略。因为它的思想是从一个顶点V0开始，辐射状地优先遍历其周围较广的区域，故得名。 A*寻路算法广度优先BFS算法]]></content>
+    <content type="text"><![CDATA[前言广度优先搜索（也称宽度优先搜索，缩写BFS，以下采用广度来描述）是连通图的一种遍历策略。因为它的思想是从一个顶点V0开始，辐射状地优先遍历其周围较广的区域，故得名。 A*寻路算法广度优先BFS算法深度优先DFS算法]]></content>
       <categories>
         <category>日志</category>
       </categories>
