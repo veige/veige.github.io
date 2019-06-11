@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[php7 aes 对接java aes SHA1PRNG算法]]></title>
+    <url>%2F2019%2F06%2F11%2Fphp7-aes-%E5%AF%B9%E6%8E%A5java-aes-SHA1PRNG%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F10%2F26%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[数据库连接池]]></title>
     <url>%2F2018%2F02%2F25%2Fdatabase-pool%2F</url>
     <content type="text"><![CDATA[早期数据库连接1、原理 一般来说，java应用程序访问数据库的过程是： 装载数据库驱动程序 通过jdbc建立数据库连接 访问数据库，执行sql语句 断开数据库连接 2、 代码 123456789101112131415161718Public void FindAllUsers()&#123; //1、装载sqlserver驱动对象 DriverManager.registerDriver(new SQLServerDriver()); //2、通过JDBC建立数据库连接 Connection con =DriverManager.getConnection("jdbc:sqlserver://192.168.2.6:1433;DatabaseName=customer", "sa", "123"); //3、创建状态 Statement state =con.createStatement(); //4、查询数据库并返回结果 ResultSet result =state.executeQuery("select * from users"); //5、输出查询结果 while(result.next())&#123; System.out.println(result.getString("email")); &#125; //6、断开数据库连接 result.close(); state.close(); con.close(); &#125; 3 、分析 程序开发过程中，存在很多问题：首先，每一次web请求都要建立一次数据库连接。建立连接是一个费时的活动，每次都得花费0.05s～1s的时间，而且系统还要分配内存资源。这个时间对于一次或几次数据库操作，或许感觉不出系统有多大的开销。可是对于现在的web应用，尤其是大型电子商务网站，同时有几百人甚至几千人在线是很正常的事。在这种情况下，频繁的进行数据库连接操作势必占用很多的系统资源，网站的响应速度必定下降，严重的甚至会造成服务器的崩溃。不是危言耸听，这就是制约某些电子商务网站发展的技术瓶颈问题。其次，对于每一次数据库连接，使用完后都得断开。否则，如果程序出现异常而未能关闭，将会导致数据库系统中的内存泄漏，最终将不得不重启数据库。还有，这种开发不能控制被创建的连接对象数，系统资源会被毫无顾及的分配出去，如连接过多，也可能导致内存泄漏，服务器崩溃。]]></content>
@@ -76,10 +86,5 @@
       <tags>
         <tag>PHP</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F12%2F09%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
