@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PHP内存泄漏]]></title>
+    <url>%2F2019%2F09%2F06%2FPHP%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker+php7.1+yaf+redis+nginx环境搭建]]></title>
     <url>%2F2019%2F07%2F01%2FDocker-php7-1-yaf-redis-nginx%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
     <content type="text"><![CDATA[近日整理自己的开发环境，发现连配置文件所在位置都模糊了，然后想在基础上安装yaf，折腾了一会儿居然要让我安装Xcode要知道我虽土豪，但我那256G的硬盘实在不允许我安装Xcode（Xcode需要6G），于是乎存在我电脑被搁置一年之久的docker又被推到了风口浪尖接下来我就跟大家分享一下我用docker搭建自己的开发环境的历程]]></content>
