@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[php编程实现log2(x)函数]]></title>
-    <url>%2F2020%2F01%2F06%2Fphp%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0log2(x)%E5%87%BD%E6%95%B0%2F</url>
+    <url>%2F2020%2F01%2F06%2Fphp-log2(x)%2F</url>
     <content type="text"><![CDATA[面试题：手写函数实现log2(x)的值,若为小数则取整； 分析&emsp; &emsp; PHP Math 函数log(x,base)能够求出以base为底的函数，然而针对于面试题实际是在考察个人的编程思想，此处用到的技巧是二进制转换成十进制的套路，闲话不多说直接上代码 123456789&lt;?php funtion log2($n) &#123; if ($n == 1) &#123; return 0; &#125; $string = (string)decbin($n); return strlen($string) - 1; &#125; 拓展 若求log函数底数为10的函数123456789101112&lt;?php function xsqrt($x, $value) &#123; $count = 0; do&#123; $value=$value/$x; $count++; &#125;while($value&gt;=$x); return $count; &#125; var_dump(xsqrt(2, 16));var_dump(xsqrt(10, 101));]]></content>
       <categories>
         <category>日志</category>
